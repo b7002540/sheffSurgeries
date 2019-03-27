@@ -15,11 +15,12 @@ class Surgery {
 	postcode nullable:false
 	postcode maxSize:8
 	telephone nullable:false
-	telephome maxSize:11
+	telephone maxSize:11
 	telephone minsize:11
 	numberOfPatients nullable:false
-	numberOfpatients max:100
+	numberOfPatients max:100
 	description maxSize:500
 	description widget:'textarea'
+	openingTime nullable:false
     }
 }
