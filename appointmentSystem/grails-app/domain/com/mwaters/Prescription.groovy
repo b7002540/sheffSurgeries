@@ -8,5 +8,13 @@ class Prescription {
 	Date dateIssued
 	Boolean patientPaying
     static constraints = {
+	pharmacyName nullable:false
+	prescripNumber nullable:false
+	prescripNumber unique:true
+	medicine nullable:false
+	totalCost nullable:false
+	totalCost maxSize:10
+	dateIssued nullable:false
+	patientPaying nullable:false
     }
 }
