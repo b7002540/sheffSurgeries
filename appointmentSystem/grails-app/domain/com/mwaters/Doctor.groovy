@@ -7,21 +7,23 @@ class Doctor {
 	String doctorEmail
 	String password
 	String doctorOffice
-	int doctorPhone
+	String doctorPhone
 	String bio
+
+//realationships
+	static hasMany=[prescriptions:Prescription, patients:Patient, nurses:Nurse, appointments:Appointment]
+	static belongsTo=[Patient, Nurse]
+
+
     static constraints = {
-	fullName nullable: false
-	qualification nullable: false
-	position nullable: false
-	doctorEmail nullable: false
+	fullName nullable:false
+	qualification nullable:false
+	position nullable:false
+	doctorEmail nullable:false
 	doctorEmail email:true
-	password nullable: false
-	password minSize: 8
-	doctorOffice nullable: false
-	doctorPhone nullable: false
-	doctorPhone maxsize: 11
-	doctorPhone minsize: 11
-	bio maxSize: 500
-	bio widget: 'textarea'
+	password nullable:false
+	doctorOffice nullable:false
+	doctorPhone nullable:false
+	bio nullable:false
     }
 }

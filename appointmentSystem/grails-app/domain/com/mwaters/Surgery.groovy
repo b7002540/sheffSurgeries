@@ -4,23 +4,22 @@ class Surgery {
 	String name
 	String address
 	String postcode
-	int telephone
-	int numberOfPatients
+	String telephone
+	String numberOfPatients
 	String description
 	String openingTime
+
+//realationship
+	static hasMany=[doctors:Doctor, nurses:Nurse, patients:Patient, appointments:Appointment, receptionists:Receptionist]
+	
 
     static constraints = {
 	name nullable:false
 	address nullable:false
 	postcode nullable:false
-	postcode maxSize:8
 	telephone nullable:false
-	telephone maxSize:11
-	telephone minsize:11
 	numberOfPatients nullable:false
-	numberOfPatients max:100
-	description maxSize:500
-	description widget:'textarea'
+	description nullable:false
 	openingTime nullable:false
     }
 }

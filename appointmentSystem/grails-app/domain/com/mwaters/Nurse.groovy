@@ -5,15 +5,18 @@ class Nurse {
 	String qualifications
 	String nurseEmail
 	String nurseOffice
-	int nursePhone
+	String nursePhone
+
+//Realationships
+	static hasMany=[doctors:Doctor]
+	static belongsTo=[Doctor]
+
     static constraints = {
 	nurseName nullable: false
 	qualifications nullable: false
 	nurseEmail nullable: false
 	nurseEmail email:true
 	nurseOffice nullable: false
-	nursePhone maxSize:11
-	nursePhone minSize:11
 	nursePhone nullable:false
     }
 }

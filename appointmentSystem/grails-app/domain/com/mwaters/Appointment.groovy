@@ -5,13 +5,16 @@ class Appointment {
 	String appTime
 	int appDuration
 	String roomNumber
+
+//relationship
+	Patient thePatient
+
     static constraints = {
-	appDate nullable: false
+	appDate nullable:false
 	appTime nullable:false
-	appTime size:3..5
 	appDuration nullable:false
-	appDuration size:1..3
 	roomNumber nullable:false
-	roomNumber size:1..6
+	thePatient nullable:false
+	thePatient blank:false
     }
 }

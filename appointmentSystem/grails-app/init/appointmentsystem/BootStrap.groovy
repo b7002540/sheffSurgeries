@@ -3,19 +3,25 @@ package com.mwaters
 class BootStrap {
 
     def init = { servletContext ->
-//Appointments:	
-	def app1=new Appointment (
-	appDate:new Date('20/1/2020'),
-	appTime:'13:00',
-	appDuration:'15',
-	roomNumber:'b700'
+//Surgery
+	def surgery1=new Surgery (
+	name:'Kings Landing Surgery',
+	address:'Kings Landing',
+	postcode:'KS1 2RK',
+	telephone:'18989765654',
+	numberOfPatients:'65',
+	description:'Hear Us Roar',
+	openingTime:'7am to 7pm'
 	).save()
-	
-	def app2=new Appointment (
-	appDate:new Date('21/1/2020'),
-	appTime:'14:00',
-	appDuration:'10',
-	roomNumber:'b701'
+
+	def surgery2=new Surgery (
+	name:'High Garden',
+	address:'The Reach',
+	postcode:'R1 HG3',
+	telephone:'89891234541',
+	numberOfPatients:'45',
+	description:'Growing Strong',
+	openingTime:'7am to 7pm'
 	).save()
 
 //Doctors:
@@ -79,25 +85,6 @@ class BootStrap {
 	patientPhone:'98076565432'
 	).save()
 
-//prescription
-	def pre1=new Prescription (
-	pharmacyName:'Kings Landing',
-	prescripNumber:'1',
-	medicine:'calpol',
-	totalCost:'£20.20',
-	dateIssued:new Date('29/05/2019'),
-	patientPaying:true
-	).save()
-
-	def pre2=new Prescription (
-	pharmacyName:'Kings Landing',
-	prescripNumber:'2',
-	medicine:'cream',
-	totalCost:'£7.20',
-	dateIssued:new Date('23/11/2019'),
-	patientPaying:false
-	).save()
-
 //receptionist
 	def recep1=new Receptionist (
 	recepName:'Margery Tyrell',
@@ -115,26 +102,54 @@ class BootStrap {
 	recepPhone:'8765654323'
 	).save()
 
-//Surgery
-	def surgery1=new Surgery (
-	name:'Kings Landing Surgery',
-	address:'Kings Landing',
-	postcode:'KS1 2RK',
-	telephone:'18989765654',
-	numberOfPatients:'65',
-	description:'Hear Us Roar',
-	openingTime:'7am to 7pm'
+
+//Appointments:	
+	def app1=new Appointment (
+	appDate:new Date('20/1/2020'),
+	appTime:'13:00',
+	appDuration:'15',
+	roomNumber:'b700',
+	thePatient:pat2
+	).save()
+	
+	def app2=new Appointment (
+	appDate:new Date('21/1/2020'),
+	appTime:'14:00',
+	appDuration:'10',
+	roomNumber:'b701',
+	thePatient:pat1
 	).save()
 
-	def surgery2=new Surgery (
-	name:'High Garden',
-	address:'The Reach',
-	postcode:'R1 HG3',
-	telephone:'89891234541',
-	numberOfPatients:'45',
-	description:'Growing Strong',
-	openingTime:'7am to 7pm'
+//prescription
+	def pre1=new Prescription (
+	pharmacyName:'Kings Landing',
+	prescripNumber:'1',
+	medicine:'calpol',
+	totalCost:'£20.20',
+	dateIssued:new Date('29/05/2019'),
+	patientPaying:true,
+	theDoctor:doc1,
 	).save()
+
+	def pre2=new Prescription (
+	pharmacyName:'High Garden',
+	prescripNumber:'2',
+	medicine:'cream',
+	totalCost:'£7.20',
+	dateIssued:new Date('23/11/2019'),
+	patientPaying:false,
+	theDoctor:doc2,
+	).save()
+
+	doc2.addToAppointments(app1)
+
+	surgery2.addToReceptionists(recep2)
+
+	pat2.addToPrescriptions(pre2)
+
+	doc1.addToPrescriptions(pre2)
+
+	surgery1.addToNurses(nurse2)
 	
     }
     def destroy = {
