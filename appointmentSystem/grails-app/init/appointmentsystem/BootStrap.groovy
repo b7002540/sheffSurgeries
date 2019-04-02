@@ -2,7 +2,7 @@ package com.mwaters
 
 class BootStrap {
 
-    def init = { servletContext ->
+  /*  def init = { servletContext ->
 //Surgery
 	def surgery1=new Surgery (
 	name:'Kings Landing Surgery',
@@ -159,9 +159,9 @@ class BootStrap {
 
 	surgery1.addToNurses(nurse2)
 
-	surgery2.addToNurses(nurse1)
+	surgery2.addToNurses(nurse1) 
 	
-    }
+    } */
     def destroy = {
     }
 }

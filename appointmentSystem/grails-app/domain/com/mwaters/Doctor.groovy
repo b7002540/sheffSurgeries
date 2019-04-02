@@ -14,6 +14,10 @@ class Doctor {
 	static hasMany=[prescriptions:Prescription, patients:Patient, nurses:Nurse, appointments:Appointment]
 	static belongsTo=[Patient, Nurse]
 
+	String toString()
+	{
+		return fullName
+	}
 
     static constraints = {
 	fullName nullable:false

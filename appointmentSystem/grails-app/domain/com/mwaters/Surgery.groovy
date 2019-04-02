@@ -12,6 +12,10 @@ class Surgery {
 //realationship
 	static hasMany=[doctors:Doctor, nurses:Nurse, patients:Patient, appointments:Appointment, receptionists:Receptionist]
 	
+	String toString()
+	{
+		return name
+	}
 
     static constraints = {
 	name nullable:false

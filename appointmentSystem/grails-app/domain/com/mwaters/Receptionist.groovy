@@ -8,7 +8,10 @@ class Receptionist {
 	String recepPhone
 
 //r
-
+	String toString()
+	{
+		return recepName
+	}
 
     static constraints = {
 	recepName nullable:false

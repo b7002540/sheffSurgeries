@@ -9,7 +9,11 @@ class Prescription {
 	Boolean patientPaying
 
 //r
-	
+	String toString()
+	{
+		return prescripNumber
+	}
+
     static constraints = {
 	pharmacyName nullable:false
 	prescripNumber nullable:false

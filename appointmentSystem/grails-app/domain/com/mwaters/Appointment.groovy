@@ -8,6 +8,11 @@ class Appointment {
 
 //relationship
 	Patient thePatient
+	
+	String toString()
+	{
+		return appTime
+	}
 
     static constraints = {
 	appDate nullable:false
