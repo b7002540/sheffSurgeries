@@ -142,14 +142,24 @@ class BootStrap {
 	).save()
 
 	doc2.addToAppointments(app1)
+	
+	doc1.addToAppointments(app2)
 
 	surgery2.addToReceptionists(recep2)
 
+	surgery1.addToReceptionists(recep1)
+
 	pat2.addToPrescriptions(pre2)
+
+	pat1.addToPrescriptions(pre1)
 
 	doc1.addToPrescriptions(pre2)
 
+	doc2.addToPrescriptions(pre1)
+
 	surgery1.addToNurses(nurse2)
+
+	surgery2.addToNurses(nurse1)
 	
     }
     def destroy = {
