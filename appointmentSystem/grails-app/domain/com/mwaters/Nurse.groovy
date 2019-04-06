@@ -8,8 +8,8 @@ class Nurse {
 	String nursePhone
 
 //Realationships
-	static hasMany=[doctors:Doctor]
-	static belongsTo=[Doctor]
+	static hasMany=[doctors:Doctor, surgerys:Surgery]
+	static belongsTo=[Doctor, Surgery]
 
 	String toString()
 	{

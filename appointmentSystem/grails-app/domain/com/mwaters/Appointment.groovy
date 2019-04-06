@@ -8,6 +8,8 @@ class Appointment {
 
 //relationship
 	Patient thePatient
+	static hasMany=[doctors:Doctor, surgerys:Surgery]
+	static belongsTo=[Doctor, Surgery]
 	
 	String toString()
 	{

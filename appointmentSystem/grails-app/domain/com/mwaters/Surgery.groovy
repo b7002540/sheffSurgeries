@@ -11,7 +11,7 @@ class Surgery {
 
 //realationship
 	static hasMany=[doctors:Doctor, nurses:Nurse, patients:Patient, appointments:Appointment, receptionists:Receptionist]
-	
+	static belongsTo=[Doctor, Nurse, Patient, Appointment, Receptionist]
 	String toString()
 	{
 		return name

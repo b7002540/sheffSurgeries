@@ -9,6 +9,9 @@ class Prescription {
 	Boolean patientPaying
 
 //r
+	static hasMany=[patients:Patient, doctors:Doctor]
+	static belongsTo=[Doctor, Patient]
+
 	String toString()
 	{
 		return prescripNumber

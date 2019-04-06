@@ -8,6 +8,10 @@ class Receptionist {
 	String recepPhone
 
 //r
+
+	static hasMany=[surgerys:Surgery]
+	static belongsTo=[Surgery]
+
 	String toString()
 	{
 		return recepName
